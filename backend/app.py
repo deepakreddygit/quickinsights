@@ -176,12 +176,12 @@ def _parse_origins() -> List[str]:
 ALLOWED_ORIGINS: List[str] = _parse_origins()
 
 CORS(
-    app,
-    resources={r"/*": {"origins": ALLOWED_ORIGINS}},
+    app, resources={r"/*": {"origins": "*"}}, supports_credentials=False,
     supports_credentials=True,
     allow_headers=["Content-Type", "Authorization"],
     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 )
+
 
 # Mirror CORS headers on normal responses (helps if a proxy strips them)
 @app.after_request
