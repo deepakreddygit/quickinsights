@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+  :root { color-scheme: light dark; }
+  body { @apply bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50; }
+}
+
+
+html, body {
+  background-color: #f3f4f6; /* light gray background */
+}
+.dark html, .dark body {
+  background-color: #111827; /* dark slate, not pure black */
+}
+
+

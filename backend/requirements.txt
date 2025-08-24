@@ -1,0 +1,16 @@
+flask
+flask-cors
+python-dotenv
+pandas
+numpy
+scikit-learn
+statsmodels
+prophet; platform_system != 'Windows'
+matplotlib
+pymongo
+pyjwt
+bcrypt
+dotenv
+recharts
+dayjs
+axios
