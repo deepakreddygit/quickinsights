@@ -1,22 +1,3 @@
-// import axios from 'axios'
-// const base = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5001'
-// export const api = axios.create({ baseURL: base })
-
-// export function setToken(t?: string) {
-//   if (t) localStorage.setItem('token', t)
-//   else localStorage.removeItem('token')
-
-//   const token = localStorage.getItem('token')
-//   if (token) api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-//   else delete api.defaults.headers.common['Authorization']
-
-//   window.dispatchEvent(new Event('token-changed'))
-// }
-
-// export function initAuthFromStorage() {
-//   const token = localStorage.getItem('token')
-//   if (token) api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-// }
 
 // frontend/src/lib/api.ts
 import axios from "axios"
