@@ -1,5 +1,5 @@
-// frontend/src/components/AnomalyTable.tsx
-import React from 'react'
+// // frontend/src/components/AnomalyTable.tsx
+// import React from 'react'
 
 type Row = {
   index: number

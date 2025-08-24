@@ -1,5 +1,5 @@
 // frontend/src/components/DataTable.tsx
-import React from 'react'
+// import React from 'react'
 
 type Props = {
   columns: string[]
