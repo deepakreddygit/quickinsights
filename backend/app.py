@@ -1,52 +1,3 @@
-# import os
-# from flask import Flask, jsonify
-# from flask_cors import CORS
-# from dotenv import load_dotenv
-# from pymongo import MongoClient
-# from routes.upload import upload_bp
-# from routes.insights import insights_bp
-
-
-# # Load .env variables
-# load_dotenv()
-
-# app = Flask(__name__)
-
-# # CORS (allow localhost frontend during dev)
-# CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
-
-# # Config
-# app.config["JWT_SECRET"] = os.getenv("JWT_SECRET", "devsecret")
-# app.config["STORAGE_PATH"] = os.getenv("STORAGE_PATH", "./storage")
-# os.makedirs(app.config["STORAGE_PATH"], exist_ok=True)
-
-# # Database
-# mongo = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017"))
-# db = mongo.get_database("bizinsights")
-
-# # Attach to app so blueprints can use them
-# app.db = db
-# app.storage_path = app.config["STORAGE_PATH"]
-# app.jwt_secret = app.config["JWT_SECRET"]
-
-# # --- Blueprints ---
-# from routes.auth import auth_bp  # noqa: E402
-
-# app.register_blueprint(auth_bp, url_prefix="/auth")
-# app.register_blueprint(upload_bp, url_prefix='/upload')
-# app.register_blueprint(insights_bp, url_prefix='/insights')
-
-
-# # Health check route
-# @app.get("/health")
-# def health():
-#     return jsonify(status="ok")
-
-
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=5001, debug=True)
-
-
 import os
 from typing import Set
 
@@ -64,6 +15,8 @@ from routes.auth import auth_bp  # keep import here so it's registered below
 load_dotenv()
 
 app = Flask(__name__)
+
+CORS(app, resources={r"/*": {"origins": "*"}})  # relax during testing
 
 # --------------------------- CORS ---------------------------
 # Allowed dev origins (no wildcard if credentials are enabled)
