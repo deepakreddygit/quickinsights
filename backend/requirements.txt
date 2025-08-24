@@ -14,3 +14,4 @@ dotenv
 recharts
 dayjs
 axios
+gunicorn
